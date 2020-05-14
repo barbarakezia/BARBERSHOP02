@@ -32,9 +32,6 @@ public class BK_Agendamento {
         }
     }
 
-    public BK_Agendamento() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     public int getId() {
         return id;

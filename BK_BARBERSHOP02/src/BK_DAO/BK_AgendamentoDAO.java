@@ -16,7 +16,7 @@ public class BK_AgendamentoDAO {
     
     public static void adicionar(BK_Agendamento Agendamento) {
 
-        String sql = "INSERT INTO agendamento (Id, Cliente, Servico, Valor) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO agendamento (Id, Valor, Data, Observacao) VALUES (?, ?, ?,?)";
 
         try {
             Connection conexao = BK_ConexaoDB.retornaBK_Conexao();
@@ -44,12 +44,7 @@ public class BK_AgendamentoDAO {
             ResultSet dados = stmt.executeQuery();
 
             while (dados.next()) {
-                BK_Agendamento temporario = new BK_Agendamento ();
-                temporario.setId(dados.getInt("id"));
-                temporario.setValor(dados.getFloat("Valor"));
-                temporario.setData(dados.getDate("Data"));
-                temporario.setObservacao(dados.getString("Observacao"));
-
+                BK_Agendamento temporario = new BK_Agendamento(dados.getInt("id"),dados.getFloat("Valor"),dados.getDate("Data"),dados.getString("Observacao"));
                 Agendamento.add(temporario);
             }
 

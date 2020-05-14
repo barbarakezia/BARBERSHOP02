@@ -15,13 +15,6 @@ public class BK_Cliente extends BK_Pessoa {
         this.endereco = endereco;
         this.cep = cep;
     }
-
-    public BK_Cliente(int id, String nome, String endereco, String cep ) {
-        super(id, nome);
-        this.endereco = endereco;
-        this.cep = cep;
-    }
-   
     
     public String getEndereco() {
         return endereco;
